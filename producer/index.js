@@ -1,4 +1,5 @@
 import Kafka from '../kafka.js'
+import UserType from "../schema/user.schema.js"
 
 async function run() {
   try {
