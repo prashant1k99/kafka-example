@@ -8,12 +8,17 @@ const run = async () => {
     await admin.connect()
     console.log("Connected!")
 
-    await admin.createTopics({
-      "topics": [{
-          "topic" : "Users"
-      }]
-    })
-    console.log("Created Successfully!")
+    const topics = await admin.listTopics()
+    console.log(topics)
+    
+    if (!topics.includes('Users')) {
+      await admin.createTopics({
+        "topics": [{
+            "topic" : "Users"
+        }]
+      })
+      console.log("Created Successfully!")
+    }
 
     await admin.disconnect();
 
