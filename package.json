@@ -1,0 +1,25 @@
+{
+	"name": "kafka-example",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"start:producer": "node producer",
+		"start:consumer": "node consumer",
+		"start:admin": "node admin.js "
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/prashant1k99/kafka-example.git"
+	},
+	"author": "Prashant Singh",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/prashant1k99/kafka-example/issues"
+	},
+	"homepage": "https://github.com/prashant1k99/kafka-example#readme",
+	"dependencies": {
+		"kafkajs": "^2.2.0"
+	}
+}
