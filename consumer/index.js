@@ -1,4 +1,5 @@
 import Kafka from '../kafka.js'
+import UserType from "../schema/user.schema.js"
 
 const run = async () => {
   try {
@@ -17,7 +18,7 @@ const run = async () => {
 
     await consumer.run({
       "eachMessage": async result => {
-        console.log(`RVD Msg ${result.message.value} on partition ${result.partition}`)
+        console.log(`User created: ${JSON.stringify(UserType.fromBuffer(result.message.value))}`)
       }
     })
   } catch (err) {

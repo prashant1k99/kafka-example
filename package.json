@@ -20,6 +20,7 @@
 	},
 	"homepage": "https://github.com/prashant1k99/kafka-example#readme",
 	"dependencies": {
+		"@faker-js/faker": "^7.5.0",
 		"avsc": "^5.7.5",
 		"kafkajs": "^2.2.0"
 	}

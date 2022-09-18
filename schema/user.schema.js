@@ -6,7 +6,7 @@ export default avro.Type.forSchema({
   fields: [
     {
       name: "id",
-      type: "number"
+      type: "string"
     },
     {
       name: "fullName",
@@ -18,10 +18,6 @@ export default avro.Type.forSchema({
     },
     {
       name: "phone",
-      type: "string"
-    },
-    {
-      name: "password",
       type: "string"
     }
   ]

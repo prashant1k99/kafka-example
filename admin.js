@@ -9,19 +9,18 @@ const run = async () => {
     console.log("Connected!")
 
     const topics = await admin.listTopics()
-    console.log(topics)
     
     if (!topics.includes('Users')) {
       await admin.createTopics({
         "topics": [{
-            "topic" : "Users"
+          topic : "Users",
+          numPartitions: 2
         }]
       })
       console.log("Created Successfully!")
-    }
+    } else console.log("Topics already exist", topics)
 
     await admin.disconnect();
-
   } catch (err) {
     console.error(`Something went wrong ${err}`)
   } finally {
