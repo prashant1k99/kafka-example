@@ -11,13 +11,13 @@ const run = async () => {
     const topics = await admin.listTopics()
     
     if (!topics.includes('Users')) {
-      await admin.createTopics({
+      const topic = await admin.createTopics({
         "topics": [{
           topic : "Users",
           numPartitions: 2
         }]
       })
-      console.log("Created Successfully!")
+      console.log("Created Successfully", JSON.stringify(topic))
     } else console.log("Topics already exist", topics)
 
     await admin.disconnect();

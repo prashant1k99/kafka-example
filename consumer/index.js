@@ -18,7 +18,7 @@ const run = async () => {
 
     await consumer.run({
       "eachMessage": async result => {
-        console.log(`User created: ${JSON.stringify(UserType.fromBuffer(result.message.value))}`)
+        console.table({...UserType.fromBuffer(result.message.value), partition: result.partition})
       }
     })
   } catch (err) {

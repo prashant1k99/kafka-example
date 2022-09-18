@@ -10,12 +10,14 @@ async function run() {
     await producer.connect()
     console.log('Connection successful to Kafka')
 
-    const userInfo = generateRandomUser()
+    const userInfo = generateRandomUser(),
+      partition = parseInt(Math.random() * 10) % 2 === 0 ? 0 : 1
 
     const data = await producer.send({
       "topic": "Users",
       messages: [{
         value: UserType.toBuffer(userInfo),
+        partition: partition
       }]
     })
     console.log(`Successfully sent data: ${JSON.stringify(data)}`)
